@@ -1,0 +1,49 @@
+# ignorar archivos de compilación y ejecutables
+*.exe
+*.o
+*.out
+*.class
+
+# ignorar archivos de configuración local
+config.ini
+settings.cfg
+
+# ignorar directorios y archivos temporales
+temp/
+*.tmp
+log/
+
+# ignorar archivos de registro
+*.log
+error.log
+
+# ignorar editores
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ignorar Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Node
+/node_modules
+npm-debug.log
+
+# ignorar compilación de salida
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# ignorar archivos del sistema
+.DS_Store
+Thumbs.db
