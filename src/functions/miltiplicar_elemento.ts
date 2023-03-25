@@ -1,6 +1,6 @@
 import { FabricaElemento } from '../classes/FabricaElementos';
-import { Arbol } from '../models/arbol';
-import { Venado } from '../models/venado';
+import { Arbol } from '../classes/arbol';
+import { Venado } from '../classes/venado';
 
 export function multiplicarElementos(
   tipoElemento: string,

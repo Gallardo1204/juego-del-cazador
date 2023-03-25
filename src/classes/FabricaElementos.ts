@@ -1,11 +1,11 @@
-import { Arbol } from '../models/arbol';
-import { Venado } from '../models/venado';
-import { numeroAleatorio } from '../common/numero_aleatorio';
+import { Arbol } from './arbol';
+import { Venado } from './venado';
+import { numeroAleatorio } from '../functions/numero_aleatorio';
 import { posXMinArbol, posXMaxArbol, 
          posYMinArbol, posYMaxArbol,
          posXMinVenado, posXMaxVenado,   
          posYMaxVenado, posYMinVenado  
-} from '../common/constantes';
+} from '../functions/constantes';
 
 export class FabricaElemento {
 

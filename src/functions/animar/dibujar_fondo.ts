@@ -1,6 +1,6 @@
-import { Contexto } from "../classes/context";
-import fondo from '../img/fondo.jpg';
-import { altoCanvas, anchoCanvas } from "./constantes";
+import { Contexto } from "../../classes/context";
+import fondo from '../../img/fondo.jpg';
+import { altoCanvas, anchoCanvas } from "../constantes";
 
 export function dibujarFondo() {
   

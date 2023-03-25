@@ -1,5 +1,5 @@
 import { IElemento } from '../interfaces/IElemento';
-import { dibujar } from '../common/dibujar';
+import { dibujar } from '../functions/dibujar';
 import arbolImg from '../img/arbol.png';
 
 export class Arbol implements IElemento {

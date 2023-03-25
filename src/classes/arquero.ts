@@ -1,6 +1,6 @@
-import { dibujar } from '../common/dibujar';
+import { dibujar } from '../functions/dibujar';
 import arqueroImg from '../img/arquero.png';
-import { velocidadArquero } from '../common/constantes';
+import { velocidadArquero } from '../functions/constantes';
 
 export class Arquero {
 

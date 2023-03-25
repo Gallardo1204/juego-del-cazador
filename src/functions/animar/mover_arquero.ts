@@ -1,4 +1,4 @@
-import { Arquero } from '../models/arquero';
+import { Arquero } from '../../classes/arquero';
 
 export function moverArquero(arquero: Arquero) {
 

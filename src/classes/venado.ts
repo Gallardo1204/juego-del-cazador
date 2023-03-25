@@ -1,8 +1,8 @@
 import { IElemento } from '../interfaces/IElemento';
-import { dibujar } from '../common/dibujar';
+import { dibujar } from '../functions/dibujar';
 import venadoImg from '../img/venado.png';
-import { posXMinVenado, posYMinVenado, posXMaxVenado, posYMaxVenado } from '../common/constantes';
-import { numeroAleatorio } from '../common/numero_aleatorio';
+import { posXMinVenado, posYMinVenado, posXMaxVenado, posYMaxVenado } from '../functions/constantes';
+import { numeroAleatorio } from '../functions/numero_aleatorio';
 
 export class Venado implements IElemento {
 

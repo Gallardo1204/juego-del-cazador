@@ -1,5 +1,5 @@
-import { Arbol } from '../models/arbol';
-import { Venado } from '../models/venado';
+import { Arbol } from '../classes/arbol';
+import { Venado } from '../classes/venado';
 
 export function detectarGolpe(/* flecha:Flecha, flechaPosicion:number, arrayObj:( Arbol | Venado)[] */) {
   
