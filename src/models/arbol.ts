@@ -17,7 +17,7 @@ export class Arbol implements IElemento {
   }
 
   renderizar(): void {
-    dibujar(arbolImg, this.posicionX, this.posicionY, this.ancho, this.alto);    
+    dibujar(arbolImg, this.posicionX, this.posicionY, this.ancho, this.alto);
   }
 
 }

@@ -1,7 +1,8 @@
 import { IElemento } from '../interfaces/IElemento';
 import { dibujar } from '../common/dibujar';
 import venadoImg from '../img/venado.png';
-
+import { posXMinVenado, posYMinVenado, posXMaxVenado, posYMaxVenado } from '../common/constantes';
+import { numeroAleatorio } from '../common/numero_aleatorio';
 
 export class Venado implements IElemento {
 
@@ -9,6 +10,7 @@ export class Venado implements IElemento {
   posicionY: number;
   alto: number;
   ancho: number;
+  visible?: boolean = true;
 
   constructor(posicionX: number, posicionY: number, alto: number, ancho: number) {
     this.posicionX = posicionX;
@@ -18,7 +20,17 @@ export class Venado implements IElemento {
   }
 
   renderizar(): void {
-    dibujar(venadoImg, this.posicionX, this.posicionY, this.ancho, this.alto);    
+    dibujar(venadoImg, this.posicionX, this.posicionY, this.ancho, this.alto);
+  }
+
+  alternarPosicion?(): void {
+    this.visible = !this.visible;
+
+    if (!this.visible) {
+      // Si el animal desaparece, cambiar su posición aleatoriamente
+      this.posicionX = numeroAleatorio(posXMinVenado, posXMaxVenado);
+      this.posicionY = numeroAleatorio(posYMinVenado, posYMaxVenado);
+    }
   }
 
 }
