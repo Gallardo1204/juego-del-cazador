@@ -27,7 +27,8 @@ export class Venado implements IElemento {
     this.visible = !this.visible;
 
     if (!this.visible) {
-      // Si el animal desaparece, cambiar su posición aleatoriamente
+      
+      // Si el venado desaparece, cambiar su posición aleatoriamente
       this.posicionX = numeroAleatorio(posXMinVenado, posXMaxVenado);
       this.posicionY = numeroAleatorio(posYMinVenado, posYMaxVenado);
     }

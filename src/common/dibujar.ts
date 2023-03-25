@@ -8,7 +8,6 @@ export function dibujar(
   alto: number
 ) {
 
-
   let img = new Image();
   img.src = imagen;
 

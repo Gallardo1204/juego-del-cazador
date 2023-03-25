@@ -10,3 +10,5 @@ export const posXMinVenado = 700;
 export const posXMaxVenado = 1075;
 export const posYMinVenado = 0;
 export const posYMaxVenado = 477;
+
+export const velocidadArquero = 0.02;

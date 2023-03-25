@@ -6,6 +6,7 @@ import { Venado } from "./models/venado";
 import { altoCanvas, anchoCanvas } from "./common/constantes";
 import { Arbol } from "./models/arbol";
 import { dibujarFondo } from "./common/dibujar_fondo";
+import { moverArquero } from "./common/mover_arquero";
 
 window.addEventListener('load', () => {
 
@@ -13,11 +14,9 @@ window.addEventListener('load', () => {
   
   let arboles:Arbol[] = multiplicarElementos('arbol', 100, 250, 3);
   let venados:Venado[] = multiplicarElementos('venado', 130, 130, 9);
-  let arquero: Arquero = new Arquero(5,200,280,130);
+  let arquero: Arquero = new Arquero(5,200,130,280);
 
-  
   animar();
-  
   
   function animar(){
     
@@ -25,7 +24,7 @@ window.addEventListener('load', () => {
     ctx.clearRect(0, 0, anchoCanvas, altoCanvas);
     dibujarFondo();
     arquero.renderizar();
-
+    moverArquero(arquero);
 
     // Dibujar arboles
     arboles.forEach(arbol => {
