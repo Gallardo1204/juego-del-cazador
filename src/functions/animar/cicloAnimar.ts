@@ -1,5 +1,5 @@
 import { Arbol } from "../../classes/arbol";
-import { Venado } from "../../classes/venado";
+import { Venado } from '../../classes/venado';
 import { Arquero } from '../../classes/arquero';
 import { Contexto } from "../../classes/context";
 import { altoCanvas, anchoCanvas, probalidadVendado } from '../constantes';
@@ -14,15 +14,18 @@ export function cicloAnimar(arboles: Arbol[], venados: Venado[], arquero: Arquer
 
   const arqueros: Arquero[] = [];
   const flechas: Flecha[] = [];
+  let iObjGolpArbol:number = 0;
+  let iObjGolpVenado:number = 0;
+  let puntaje: number = 0;
 
   document.addEventListener("keydown", (event: KeyboardEvent) => {
     if (event.code === "Space") {
+      arquero.flechas = [];
       arqueros.push(arquero);
       arquero.disparar();
       flechas.push(...arquero.flechas) // agregar las flechas al array global
     }
   });
-
 
 
   animar();
@@ -31,14 +34,11 @@ export function cicloAnimar(arboles: Arbol[], venados: Venado[], arquero: Arquer
 
     // Se borra el canvas completo
     ctx.clearRect(0, 0, anchoCanvas, altoCanvas);
-
-
-    // Se dibujan los elemento
     dibujarFondo();
-    
     arquero.renderizar();
     moverArquero(arquero);
     
+    // Dibujar arboles
     arboles.forEach(arbol => {
       arbol.renderizar();
     });
@@ -58,22 +58,38 @@ export function cicloAnimar(arboles: Arbol[], venados: Venado[], arquero: Arquer
       }
     });
 
+    if(venados.length == 0 ){
+      let div = document.querySelector(".ganador");
+      div.classList.add("visible");
+      
+    } else {
 
-    // Dibujar las flechas
-    for (const flecha of flechas) {
-      flecha.renderizar();
-      flecha.actualizarPosicion();
-
-      // Detectar colisiones con el borde del canvas
-      if (flecha.posicionX > anchoCanvas) {
+      /* Detectar colisiones */
+      for (const flecha of flechas) {
         const index = flechas.indexOf(flecha);
-        flechas.splice(index, 1);
+        flecha.renderizar();
+        flecha.actualizarPosicion();
+  
+        iObjGolpArbol = detectarGolpe(flecha, arboles);
+        iObjGolpVenado = detectarGolpe(flecha, venados);
+  
+        if (iObjGolpArbol >= 0) {
+          flechas.splice(index, 1);
+        }
+  
+        if (iObjGolpVenado >= 0) {
+          flechas.splice(index, 1);
+          venados.splice(iObjGolpVenado, 1);
+          puntaje++;
+          document.querySelector(".puntaje").innerHTML = "Puntaje: " + puntaje;
+        }
+  
+        if (flecha.posicionX > anchoCanvas) {
+          flechas.splice(index, 1);
+        }
       }
-
     }
 
-
-    // Repetir la animación
     requestAnimationFrame(animar);
 
   }

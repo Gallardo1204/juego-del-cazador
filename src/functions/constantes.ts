@@ -17,4 +17,4 @@ export const velocidadArquero = 0.02;
 
 export const anchoFlecha = 60;
 export const altoFlecha = 5;
-export const velocidadFlecha = 5;
+export const velocidadFlecha = 15;
