@@ -1,6 +1,7 @@
+import { velocidadArquero, velocidadFlecha } from '../functions/constantes';
 import { dibujar } from '../functions/dibujar';
 import arqueroImg from '../img/arquero.png';
-import { velocidadArquero } from '../functions/constantes';
+import { Flecha } from './flecha';
 
 export class Arquero {
 
@@ -9,8 +10,7 @@ export class Arquero {
   alto: number;
   ancho: number;
   direccion: string;
-  flechas: [];
-  velocidad: number;
+  flechas: Flecha[];
 
   constructor(posicionX: number, posicionY: number, ancho: number, alto: number) {
     this.posicionX = posicionX;
@@ -18,7 +18,6 @@ export class Arquero {
     this.ancho = ancho;
     this.alto = alto;
     this.direccion = '';
-    this.velocidad = 5;
     this.flechas = [];
   }
 
@@ -34,6 +33,12 @@ export class Arquero {
   moverAbajo() {
     this.direccion = "downArrow";
     this.posicionY += velocidadArquero;
+  }
+
+  disparar() {
+    const flecha = new Flecha(this.posicionX + this.ancho, this.posicionY + (this.alto-110) / 2);
+    flecha.velocidad = velocidadFlecha;
+    this.flechas.push(flecha);
   }
 
 }
