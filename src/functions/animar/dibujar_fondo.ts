@@ -4,8 +4,8 @@ import { altoCanvas, anchoCanvas } from "../constantes";
 
 export function dibujarFondo() {
   
-  /* Se fibuja el fondo del canvas */
   const ctx = Contexto.getInstancia();
+  ctx.clearRect(0, 0, anchoCanvas, altoCanvas);
   
   let fondoImagen = new Image();
   fondoImagen.src = fondo;

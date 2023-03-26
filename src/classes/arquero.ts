@@ -27,7 +27,7 @@ export class Arquero {
 
   moverArriba() {
     this.direccion = "upArrow";
-    this.posicionY -= velocidadArquero
+    this.posicionY -= velocidadArquero;
   }
 
   moverAbajo() {
